@@ -9,6 +9,14 @@ const slider = document.querySelector('.slider')
 const next = document.querySelector('.slider_next')
 const prev = document.querySelector('.slider_prev')
 
+//Prueba de slider 2
+const prueba       = document.querySelector('.prueba')
+const botones      = document.querySelectorAll('.prueba__button') 
+const [ next2 , prev2 ] = botones
+const grande       = document.querySelector('.grande')
+const puntos__li   = document.querySelectorAll('.puntos__li')    
+const paneles      = document.querySelectorAll('.grande__panel')
+
 
 //Menú de navegación cambiar de jq a js
 Fabars.click(function(){
@@ -54,5 +62,48 @@ function anterior(){
     desplazar()
 }
 
+// Prueba 2
+let   foto2         = 0
+let   anchoPanel   = 100 / paneles.length
+let   automatico   = setInterval( siguiente , 2000)
+puntos__li.forEach( function( cadaPunto , i ){
+    puntos__li[i].addEventListener('click',function(){
+        foto2 = i
+        desplazar()
+    })
+})
 
+next2.addEventListener('click', siguiente )
+
+prev2.addEventListener('click',function(){
+    foto2--
+    if( foto2 < 0 )  {
+        foto2 = paneles.length - 1 
+    }
+    desplazar()
+})
+
+prueba.addEventListener('mouseover',function(){
+    clearInterval( automatico  )
+})
+
+prueba.addEventListener('mouseout',function(){
+    automatico   = setInterval( siguiente , 2000)
+})
+
+
+function desplazar(){
+    grande.style.transform = 'translateX(-' + foto2 * anchoPanel + '%)'
+    puntos__li.forEach( function( cadaPunto , i ){
+        puntos__li[i].classList.remove('activo')
+    })
+    puntos__li[foto].classList.add('activo')
+}
+function siguiente(){
+    foto2++
+    if( foto2 >= paneles.length ){
+        foto2 = 0 
+    }
+    desplazar()
+}
 

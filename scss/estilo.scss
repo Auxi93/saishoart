@@ -223,104 +223,109 @@
         font-weight: 400;
         font-size: 16px;
       }
-
-      .gallery{
+      overflow-x: hidden;
+      // prueba 2
+            
+      .prueba {
         width: 80%;
-        margin: auto;
-        // background-color: pink;
-        
-    }
-    .slider__grande{
+        // background: salmon;
+        max-width: 1200px;
+      //   overflow: hidden;
+      position: relative;
+      }
+      .prueba__h2{
+          margin: 0 0 1em;
+      }
+      .grande {
         width: 300%;
-        // background-color: burlywood;
-        transition: all .5s ease;
-        display: grid;
-        grid-template-columns: repeat(9, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-        gap: 20px;
-        transition: all .5s ease;
-    }
-    
-    .slider__button{
-        position: absolute;
-        top: calc( 50% - 25px );
-        width: 40px;
-        height: 60px;
-        background-color: black;
-        color: white;
-        z-index: 1;
-        font-size: 1.3em;
-        @include flexible (row, nowrap, center, center, auto);
-        cursor: pointer;
-        transition: all .5s ease;
-       
-    }
-    .slider__button:hover{
-        background-color: grey;
         
-    }
-    .slider__next{
-        right: 0;
-    }
-    .slider__prev{
-        left:0
-    }
-    .slider__img{
+        @include flexible( row , nowrap , flex-start , flex-start , auto );
+        transition: all .5s ease;
+      }
+      .grande__panel{
+        width: calc( 100% / 3 );
+        display: grid;
+        grid-template-columns: repeat( 3,  1fr);
+        gap: 10px;
+        margin: 0 10px 0 0;
+      }
+
+
+      .slide {
         width: 100%;
-        // background-color: lightblue;
-    
-            &.one{
-                grid-column: 1/3;
-                grid-row: 1/2;  
-            }
-            &.two{
-                // grid-column: 3/4;
-                // grid-row: 1/2;  
-            }
-            &.three{
-                // grid-column: 4/5;
-                // grid-row: 1/2;  
-            }
-            &.four{
-                // grid-column: 5/6;
-                // grid-row: 1/2;  
-            }
-            &.five{
-                // grid-column: 6/7;
-                // grid-row: 1/2;  
-            }
-            &.six{
-                // grid-column: 7/8;
-                // grid-row: 1/2;  
-            }
-            &.seven{
-                // grid-column: 8/9;
-                // grid-row: 1/2;  
-            }
-            &.eight{
-                // grid-column: 9/10;
-                // grid-row: 1/2;  
-            }
-    
-    }
-    .slider__puntos{
+        height: 100%;
+        background-color: lightblue;
+        position: relative;
+      }
+      .slide1 {
+        grid-column: 1 / 3;
+      }
+      .slide__img {
         width: 100%;
-        // background: crimson;
-        padding: 1em;
-        @include flexible (row, nowrap, center, center, auto);
-    }
-    .slider__punto{
-        width: 10px;
-        height: 10px;
-        background-color: rgba(0, 0, 0, 0.3);
+        height: 100%;
+        // background-color: lightcoral;
+      }
+      .slide__texto {
+        width: 100%;
+        min-height: 70px;
+        // background: lightseagreen;
+        padding:1em;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        color: white;
+        font-size: 0.9em;
+      }
+      .slide__fa {
+      }
+      .slide__h2 {
+      }
+      .slide__span {
+      }
+      .puntos {
+        width: 100%;
+        height: 50px;
+        // background: magenta;
+        @include flexible(row, nowrap, center, center, auto);
+      }
+      .puntos__li {
+        width: 1em;
+        height: 1em;
+        background: rgba(0, 0, 0, 0.4);
         border-radius: 50%;
-        margin: 0 .4em;
+        margin: 0 0.3em;
+        transition: all 0.5s ease;
         cursor: pointer;
-    }
-    .slider__punto.activo{
-        background-color: black;
-    }
+      }
+      .activo {
+        background: rgba(0, 0, 0, 1);
+      }
+
+
+      .prueba__button{
+        position: absolute;
+        width:50px;
+        height: 50px;
+        background: black;
+        top:calc( 50% - 25px );
+        color:white;
+        font-size: 2em;
+        @include flexible( row , nowrap , center , center , auto );
+        cursor: pointer;
+        transition: all .5s ease;
+      }
+      .prueba__button:hover{
+        transform: scale(.9);
+      }
+      .prueba__next{
+        right: 0;
+      }
+      .prueba__prev{
+        left: 0;
+      }
     }
   }
 
+  
 }
