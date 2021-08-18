@@ -1,0 +1,122 @@
+@import "reset", "variables", "mixins";
+
+.header {
+  background-color: #3f48cc;
+  &_centrado {
+    width: 100%;
+    @include flexible(row, nowrap, space-around, center, auto);
+    padding: 10px;
+  }
+  &_h1 {
+    width: 5%;
+  }
+  i.fa-bars {
+    display: none;
+  }
+  &_ul {
+    width: 100%;
+    @include flexible(row, nowrap, space-around, center, auto);
+  }
+  &_li {
+    font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    margin: 0px 10px;
+    transition: color 0.3s ease;
+    :hover {
+      color: $morado;
+    }
+  }
+}
+.main {
+  width: 100%;
+  height: 100vh;
+   .main_cols {
+    width: 100%;
+    min-height: 500px;
+    background-color: #3f48cc;
+    @include flexible(row, nowrap, space-around, center, auto);
+  }
+  .cols {
+    &_left {
+      width: 50%;
+      h3 {
+        font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+        color: #8955cc;
+      }
+      h2 {
+        font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
+        font-weight: 900;
+        font-size: 24px;
+        color: white;
+        margin: 20px 0px;
+      }
+      .cols_text {
+        width: 90%;
+      }
+      p {
+        font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
+        font-size: 16px;
+        color: white;
+        line-height: 29px;
+      }
+      .cols_btns{
+        width: 90%;
+        @include flexible(row, nowrap, space-around, center, auto);
+        margin-top: 20px;
+      }
+      a.btn {
+        display: inline-flex;
+        padding: 15px 30px;
+        background: white;
+        border: 1px solid #6a28c0;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        color: #6a28c0;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        margin: auto;
+      }
+      a.btn:hover {
+        background: #6a28c0;
+        color: white;
+        border-radius: 10px solid #6a28c0;
+      }
+    }
+    &_right {
+      width: 50%;
+      h4 {
+        font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        color: white;
+      }
+      .box_people {
+        width: 100%;
+        @include flexible(row, wrap, space-between, center, auto);
+      }
+      .person {
+        width: calc( 100%/2 - 20px);
+        margin: 10px;
+      }
+      .minibox_white {
+        width: 100%;
+        background-color: white;
+        border-radius: 6px;
+        padding: 20px;
+      }
+      .icon {
+        margin: auto;
+        @include flexible(row, wrap, center, center, auto);
+        padding: 5px;
+
+      }
+    }
+  }
+
+}
