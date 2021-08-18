@@ -563,8 +563,8 @@ body {
   font-size: 0.9em;
 }
 .main .cols_right .puntos {
-  width: 100%;
-  height: 50px;
+  width: 80%;
+  padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -582,17 +582,14 @@ body {
       align-content: auto;
 }
 .main .cols_right .puntos__li {
-  width: 1em;
-  height: 1em;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 50%;
-  margin: 0 0.3em;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  width: 70px;
+  height: 3px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 0 0.4em;
   cursor: pointer;
 }
-.main .cols_right .activo {
-  background: black;
+.main .cols_right .puntos__li.activo {
+  background: yellow;
 }
 .main .cols_right .prueba__button {
   position: absolute;

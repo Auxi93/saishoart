@@ -65,45 +65,48 @@ function anterior(){
 // Prueba 2
 let   foto2         = 0
 let   anchoPanel   = 100 / paneles.length
-let   automatico   = setInterval( siguiente , 2000)
+// let   automatico   = setInterval( siguiente , 2000)
 puntos__li.forEach( function( cadaPunto , i ){
     puntos__li[i].addEventListener('click',function(){
         foto2 = i
-        desplazar()
+        desplazar2()
     })
 })
 
-next2.addEventListener('click', siguiente )
+next2.addEventListener('click', siguiente2 )
 
-prev2.addEventListener('click',function(){
-    foto2--
-    if( foto2 < 0 )  {
-        foto2 = paneles.length - 1 
-    }
-    desplazar()
-})
+prev2.addEventListener('click', anterior2)
 
-prueba.addEventListener('mouseover',function(){
-    clearInterval( automatico  )
-})
+//automático
 
-prueba.addEventListener('mouseout',function(){
-    automatico   = setInterval( siguiente , 2000)
-})
+// prueba.addEventListener('mouseover',function(){
+//     clearInterval( automatico  )
+// })
+
+// prueba.addEventListener('mouseout',function(){
+//     automatico   = setInterval( siguiente2 , 2000)
+// })
 
 
-function desplazar(){
+function desplazar2(){
     grande.style.transform = 'translateX(-' + foto2 * anchoPanel + '%)'
     puntos__li.forEach( function( cadaPunto , i ){
         puntos__li[i].classList.remove('activo')
     })
-    puntos__li[foto].classList.add('activo')
+    puntos__li[foto2].classList.add('activo')
 }
-function siguiente(){
+function siguiente2(){
     foto2++
     if( foto2 >= paneles.length ){
         foto2 = 0 
     }
-    desplazar()
+    desplazar2()
+}
+function anterior2(){
+    foto2--
+    if( foto2 < 0 )  {
+        foto2 = paneles.length - 1 
+    }
+    desplazar2()
 }
 
