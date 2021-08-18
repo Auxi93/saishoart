@@ -18,6 +18,7 @@ a {
 
 p {
   line-height: 29px;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 0.9em;
   color: black;
@@ -491,4 +492,10 @@ body {
   margin: 20px 0 0 0;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+}
+.main .cols_right .text_platform {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
 }
