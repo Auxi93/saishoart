@@ -84,7 +84,10 @@
         font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
         font-weight: 900;
         font-size: 32px;
-        color: rgb(187, 192, 197);
+        color: rgb(202, 148, 216);
+      }
+      .h3_question {
+        color: rgb(199, 177, 204);
       }
       h2 {
         font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
@@ -103,9 +106,9 @@
         line-height: 29px;
       }
       .cols_btns {
-        width: 90%;
-        @include flexible(row, nowrap, space-around, center, auto);
-        margin: 30px 0px;
+        width: 60%;
+        @include flexible(row, nowrap, center, center, auto);
+        margin: 20px 0px 20px 0px;
       }
       a.btn {
         display: inline-flex;
@@ -187,6 +190,8 @@
           width: 400%;
           @include flexible(row, nowrap, flex-start, center, auto);
           transition: all 0.5s ease;
+          border-radius: 5px;
+          box-shadow: 2px 2px 10px rgb(0 0 0 / 30%);
         }
         &_img {
           width: calc(100% / 4);
@@ -343,6 +348,8 @@
 @media screen and (max-width: 780px) {
   .header {
     width: 100%;
+    position: sticky;
+    background: #6927bf;
     &_centrado {
       @include flexible(row, wrap, space-between, center, auto);
     }
@@ -362,7 +369,7 @@
       display: block;
     }
     &_ul {
-      @include flexible(row, nowrap, center, center, auto);
+      @include flexible(column, wrap, center, center, auto);
     }
     &_li {
       margin: 10px;
@@ -375,13 +382,18 @@
     align-items: center;
     .cols_left {
       width: 100%;
+      h2 {
+        font-size: 30px;
+        margin: 10px 0px;
+      }
+      .cols_btns {
+        width: 74%;
+      }
     }
-    h2 {
-      font-size: 30px;
-      margin: 10px 0px;
-    }
+  
     .cols_right {
       width: 100%;
+      margin-top: 0px;
       .slider {
         width: 65%;
         overflow: hidden;
@@ -390,6 +402,7 @@
       }
     }
     .grid {
+      height: 465px;
       grid-template-rows: repeat(4, 1fr);
       gap: 15px;
     }
@@ -402,6 +415,37 @@
     .grid_three {
       grid-row: 3/5;
     }
+  }
+}
+@media screen and (max-width: 480px) {
+
+  .main .slider__section {
+    .cols_left {
+      width: 100%;
+      .cols_btns {
+        width: 100%;
+        @include flexible (row, wrap, center, center, auto);
+      }
+      a.btn {
+        padding: 10px 20px;
+  
+      }
+    }
+    h2 {
+      font-size: 30px;
+      margin: 10px 0px;
+    }
+    .cols_right {
+      width: 100%;
+      margin-top: 0px;
+      .slider {
+        width: 65%;
+        overflow: hidden;
+        margin: auto;
+        padding-top: 6px;
+      }
+    }
+   
   }
 }
 
