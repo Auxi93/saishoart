@@ -1,133 +1,158 @@
-//Menú de navegación del header 
-const FaBars = document.querySelector('.fa-bars');
-const Nav = document.querySelector('nav');
+// Header menu navigation consts
+const faBars = document.querySelector('.fa-bars');
+const nav = document.querySelector('nav');
 
 
-// // Carrusel de comentarios (solo 1)
+// Comments Carousel consts (1)
 const lines = document.querySelectorAll('.slider_line')
 const container = document.querySelector('.container')
 const slider = document.querySelector('.slider')
 const next = document.querySelector('.slider_next')
 const prev = document.querySelector('.slider_prev')
 
-// //Carrusel de comentarios (3)
+// Comments Carousel consts (3)
 const slider_2       = document.querySelector('.slider_2')
-const botones      = document.querySelectorAll('.slider_2_button') 
-const [ next2 , prev2 ] = botones
+const buttons      = document.querySelectorAll('.slider_2_button') 
+const [ next2 , prev2 ] = buttons
 const container2       = document.querySelector('.container2')
-const line2   = document.querySelectorAll('.slider_line2')    
-const paneles      = document.querySelectorAll('.container2__panel')
+const lines2   = document.querySelectorAll('.slider_line2')    
+const panels      = document.querySelectorAll('.container2__panel')
 
-// Constantes del carrusel vertical
-const grande = document.querySelector('.slider__grande__vertical')
-const punto = document.querySelectorAll('.slider__point')
+// Vertical Carousel consts
+const containerVertical = document.querySelector('.slider__container__vertical')
+const points = document.querySelectorAll('.slider__point')
 
 
-//Menú de navegación del header
-FaBars.addEventListener('click', function () {
-    Nav.classList.toggle('ver');
-    FaBars.classList.toggle('fa-times');
+// Header menu navigation
+faBars.addEventListener('click', function () {
+    nav.classList.toggle('ver');
+    faBars.classList.toggle('fa-times');
   })
 
+// Comments Carousel (1)
+let photo = 0
 
-// Carrusel de comentarios (solo 1)
-let foto = 0
-
-lines.forEach(function(cadaPunto, i){
-      lines[i].addEventListener('click', function(){
-        foto = i 
-        moveToElement()
+lines.forEach(function(eachLine, i){
+      eachLine.addEventListener('click', function(){
+        photo = i 
+        movePhoto()
       })
 })
-next.addEventListener('click', siguiente)
-prev.addEventListener('click', anterior)
+next.addEventListener('click', nextPhoto)
+prev.addEventListener('click', previousPhoto)
 
-//Carrusel de comentarios 2 (3 comentarios al desplazar)
-let   foto2         = 0
-let   anchoPanel   = 100 / paneles.length
+// Comments Carousel (3)
+let   photo2         = 0
+let   panelWidth   = 100 / panels.length
 
-line2.forEach( function( cadaPunto , i ){
-    line2[i].addEventListener('click',function(){
-        foto2 = i
-        desplazar2()
+lines2.forEach( function( eachLine2 , i ){
+    eachLine2.addEventListener('click',function(){
+        photo2 = i
+        movePhoto2()
     })
 })
-next2.addEventListener('click', siguiente2 )
-prev2.addEventListener('click', anterior2)
+next2.addEventListener('click', nextPhoto2 )
+prev2.addEventListener('click', previousPhoto2)
 
 
-//Carrusel vertical
-let activo = 0
-punto.forEach(function(cadaPunto, i){
-    punto[i].addEventListener('click', function(){
-        // Primero, apagamos todas las líneas y activamos la nueva
-        punto.forEach(function(cadaPunto, i){
-            punto[i].classList.remove('activo')
-        })
-        punto[i].classList.add('activo')
-
-        // Segundo, movemos la pantalla hacia abajo
-        setTimeout( function (){
-            grande.style.transform = 'translateY(' + i * -(100 / punto.length) + '%)'
-        }, 500)     
-        // Por último, marcamos la imagen como activa
-        activo = i
+// Vertical Carousel
+let verticalActive = 0
+points.forEach(function(eachPoint, i){
+    eachPoint.addEventListener('click', function(){
+        moveVertical(i)
     })
     
 })
 
+// Keyboard arrow keys to move Vertical Carousel
+document.body.addEventListener('keydown', function(e){
+    if( e.key =='ArrowUp')
+    {
+        let nextPoint = verticalActive - 1
+        if (nextPoint < 0)
+        {
+            nextPoint = points.length - 1
+        }
+        moveVertical(nextPoint)
+    }
+    else if (e.key =='ArrowDown')
+    {
+        let nextPoint = verticalActive + 1
+        if (nextPoint >= points.length)
+        {
+            nextPoint = 0
+        }
+        moveVertical(nextPoint)
+    }
+})
 
-//Funciones
-//Carrusel 1
 
-function moveToElement(){
-    let operacion = foto* -25
+// Util functions
+// Vertical Carousel
+function moveVertical(i)
+{
+    // First, we disable every point
+    points.forEach(function(eachPoint, i){
+        eachPoint.classList.remove('active')
+    })
+    points[i].classList.add('active')
 
-    let propiedad = 'translateX('+ operacion + '%)'
+    // Then, move the carousel
+    setTimeout( function (){
+        containerVertical.style.transform = 'translateY(' + i * -(100 / points.length) + '%)'
+    }, 100)     
+    // Finally, store the active point
+    verticalActive = i
+}
+
+// Comments Carousel (1)
+function movePhoto(){
+    let operacion = photo * -25
+
+    let propiedad = 'translateX(' + operacion + '%)'
     container.style.transform = propiedad
 
-    lines.forEach(function(cadaPunto, i){
-        lines[i].classList.remove('active')
+    lines.forEach(function(eachLine, i){
+        eachLine.classList.remove('active')
     })
-    lines[foto].classList.add('active')
+    lines[photo].classList.add('active')
 }
-function siguiente (){
-    foto++
-    if (  foto > 3){
-        foto = 0
+function nextPhoto (){
+    photo++
+    if (  photo > 3){
+        photo = 0
     }
-    moveToElement()
+    movePhoto()
 }
-function anterior(){
-    foto--
-    if ( foto < 0 ){
-        foto = 3
+function previousPhoto(){
+    photo--
+    if ( photo < 0 ){
+        photo = 3
     }
-    moveToElement()
+    movePhoto()
 }
 
-//Carrusel 2
-
-function desplazar2(){
-    container2.style.transform = 'translateX(-' + foto2 * anchoPanel + '%)'
-    line2.forEach( function( cadaPunto , i ){
-        line2[i].classList.remove('activo')
+// Comments Carousel (3)
+function movePhoto2(){
+    container2.style.transform = 'translateX(-' + photo2 * panelWidth + '%)'
+    lines2.forEach( function( eachLine2, i ){
+        eachLine2.classList.remove('active')
     })
-    line2[foto2].classList.add('activo')
+    lines2[photo2].classList.add('active')
 }
-function siguiente2(){
-    foto2++
-    if( foto2 >= paneles.length ){
-        foto2 = 0 
+function nextPhoto2(){
+    photo2++
+    if( photo2 >= panels.length ){
+        photo2 = 0 
     }
-    desplazar2()
+    movePhoto2()
 }
-function anterior2(){
-    foto2--
-    if( foto2 < 0 )  {
-        foto2 = paneles.length - 1 
+function previousPhoto2(){
+    photo2--
+    if( photo2 < 0 )  {
+        photo2 = panels.length - 1 
     }
-    desplazar2()
+    movePhoto2()
 }
 
 
