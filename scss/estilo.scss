@@ -35,8 +35,31 @@
 .main {
   width: 100%;
   min-height: 100vh;
-  background-color: rgb(59, 47, 127);
-   .main_cols {
+  background-color: plum;
+  padding-bottom: 4em;
+  .slider__button{
+    position: absolute;
+    right: calc( 50% - 25px );
+    width: 40px;
+    height: 40px;
+    background-color: rgb(59, 59, 59);
+    color: white;
+    z-index: 4;
+    font-size: 1.3em;
+    @include flexible (row, nowrap, center, center, auto);
+    cursor: pointer;
+    transition: all .5s ease;
+    }
+    .slider__button:hover{
+      background-color: grey;
+    }
+    .slider__up{
+      top: 0;
+    }
+    .slider__down{
+      bottom:0
+    }
+   .slider__section {
     width: 100%;
     @include flexible(row, nowrap, space-around, center, auto);
   }
@@ -95,7 +118,6 @@
       .grid {
         width: 100%;
         max-height: 650px;
-        // background-color: red;
         padding: 10px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -143,7 +165,7 @@
         }
       }
       .slider{
-        width: 80%;
+        width: 100%;
         overflow: hidden;
         .container {
           width: 400%;
@@ -154,6 +176,7 @@
           width: calc( 100% / 4);
         }
         &_picture {
+          width: 100%;
           border-top-left-radius: 12px 12px;
           border-top-right-radius: 12px 12px;
         }
@@ -170,6 +193,7 @@
         &_btns {
           position: relative;
           @include flexible(row, nowrap, space-between, center, auto);
+          margin-top: 10px;
         }
         &_lines {
           width: 80%;
@@ -184,37 +208,31 @@
           cursor: pointer;
         }
         &_line.active {
-          background-color: blue;
+          background-color: #3b2f7f;
+        }
+        .slider_button{
+          width:47px;
+          height: 35px;
+          cursor: pointer;
+          background: #ffffff;
+          color: #3b2f7f;
+          border: 2px solid #3b2f7f;
+          border-radius: 8px;
+          position: absolute;
+          font-size: 1.2em;
+          @include flexible( row , nowrap , center , center , auto );
+          transition: all .5s ease;
+        }
+        .slider_button:hover{
+          transform: scale(.9);
+          background-color: #3b2f7f;
+          color: #ffffff;
         }
         .slider_next{
-          width: 49px;
-          height: 42px;
-          position: absolute;
-          font-size: 1.3em;
-          right: 0;
-          @include flexible (row, nowrap, center, center, auto);
-          cursor: pointer;
-          background: #ffffff;
-          color: #3b2f7f;
-          border: 2px solid #3b2f7f;
-          border-radius: 8px;
-          margin: 20px 0 0 0;
-          transition: all 0.25s ease-in-out;
+          right: 0px;
         }
         .slider_prev{
-          width: 49px;
-          height: 42px;
-          position: absolute;
-          font-size: 1.3em;
           right: 48px;
-          @include flexible (row, nowrap, center, center, auto);
-          cursor: pointer;
-          background: #ffffff;
-          color: #3b2f7f;
-          border: 2px solid #3b2f7f;
-          border-radius: 8px;
-          margin: 20px 0 0 0;
-          transition: all 0.25s ease-in-out;
         }
       }
       .text_platform {
@@ -226,19 +244,17 @@
       overflow-x: hidden;
       // prueba 2
             
-      .prueba {
-        width: 80%;
-        // background: salmon;
+      .slider_2 {
+        width: 100%;
         max-width: 1200px;
-      //   overflow: hidden;
-      position: relative;
+        overflow: hidden;
+        position: relative;
       }
-      .prueba__h2{
+      .slider_2__h2{
           margin: 0 0 1em;
       }
       .grande {
         width: 300%;
-        
         @include flexible( row , nowrap , flex-start , flex-start , auto );
         transition: all .5s ease;
       }
@@ -261,20 +277,8 @@
       .slide__img {
         width: 100%;
         height: 100%;
-        // background-color: lightcoral;
       }
-      .slide__texto {
-        width: 100%;
-        min-height: 70px;
-        // background: lightseagreen;
-        padding:1em;
-        position: absolute;
-        bottom: 0;
-        left: 0;
 
-        color: white;
-        font-size: 0.9em;
-      }
       .puntos {
         width: 80%;
         padding: 1em;
@@ -288,28 +292,37 @@
         cursor: pointer;
       }
       .puntos__li.activo {
-        background: yellow;
+        background: #3b2f7f;
       }
-      .prueba__button{
-        position: absolute;
-        width:50px;
-        height: 50px;
-        background: black;
-        top:calc( 50% - 25px );
-        color:white;
-        font-size: 2em;
-        @include flexible( row , nowrap , center , center , auto );
+      .slider_2_btns {
+        width: 100%;
+        position: relative;
+        @include flexible(row, nowrap, space-between, center, auto);
+        margin-top: 10px;
+      }
+      .slider_2_button{
+        width:47px;
+        height: 35px;
         cursor: pointer;
+        background: #ffffff;
+        color: #3b2f7f;
+        border: 2px solid #3b2f7f;
+        border-radius: 8px;
+        position: absolute;
+        font-size: 1.2em;
+        @include flexible( row , nowrap , center , center , auto );
         transition: all .5s ease;
       }
-      .prueba__button:hover{
+      .slider_2_button:hover{
         transform: scale(.9);
+        background-color: #3b2f7f;
+        color:  #ffffff;
       }
-      .prueba__next{
-        right: 0;
+      .slider_2_next{
+        right: 0px;
       }
-      .prueba__prev{
-        left: 0;
+      .slider_2_prev{
+        right: 48px;
       }
     }
   }
