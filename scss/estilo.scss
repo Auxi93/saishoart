@@ -418,21 +418,19 @@
   }
 }
 @media screen and (max-width: 480px) {
-
+  .header_li {
+    font-size: 13px;
+  }
   .main {
     position: relative;
     overflow:hidden;
     .slider_points {
       display: none;
-    }
-    
+    }    
     .slider__section {
       // background: red;
       min-height: 1510px;
-      display: flex;
-      flex-flow: column nowrap;
-      justify-content: flex-start;
-      align-items: center;
+      @include flexible (column, nowrap, flex-start, center, auto);
       .cols_left {
         width: 100%;
         .cols_btns {
@@ -448,16 +446,20 @@
         }
         a.btn {
           padding: 10px 20px;
-    
+          margin-top: 10px;
         }
       }
-      h2 {
+      .cols_left h2 {
         font-size: 30px;
         margin: 10px 0px;
+        color: rgb(202, 148, 216);
       }
       .cols_right {
         width: 100%;
         margin-top: 0px;
+      }
+      .cols_right .grid_span {
+        color: #ca94d8;
       }
       .cols_right .slider {
         width: 100%;
@@ -466,24 +468,32 @@
         padding-top: 6px;
       }
       .cols_right .text_platform {
+        color: black;
         font-size: 14px;
       }    
-      .cols_right  .grid {
+      .cols_right .grid {
        display: flex;
        flex-flow: row wrap;
        justify-content: center;
        align-items: center;
+      }  
+      .cols_right .slider_info {
+        padding: 10px 20px 20px 10px;
       }
-      
-     
+      .cols_right .slider_line {
+        width: 20px;
+      }   
+      .cols_right .slider_line2 {
+        width: 20px;
+      }   
     }
-    .slider__section.plus {
+    .slider__section.second {
       // background-color: green;
       min-height: 1100px;
     }
-    .slider__section.special {
+    .slider__section.third {
       // background-color: magenta;
-      min-height: 600px;
+      min-height: 700px;
     }
   }
 

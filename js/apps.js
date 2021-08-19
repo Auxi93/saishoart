@@ -55,18 +55,6 @@ line2.forEach( function( cadaPunto , i ){
 next2.addEventListener('click', siguiente2 )
 prev2.addEventListener('click', anterior2)
 
-//automático
-
-// prueba.addEventListener('mouseover',function(){
-//     clearInterval( automatico  )
-// })
-
-// prueba.addEventListener('mouseout',function(){
-//     automatico   = setInterval( siguiente2 , 2000)
-// })
-
-
-
 
 //Carrusel vertical
 let activo = 0
@@ -87,7 +75,6 @@ punto.forEach(function(cadaPunto, i){
     })
     
 })
-
 
 
 //Funciones
