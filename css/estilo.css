@@ -157,7 +157,7 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: lightslategray;
+  background-color: #bcc4cc;
   cursor: pointer;
   opacity: 0.8;
 }
@@ -418,12 +418,12 @@ body {
   width: calc(100% / 4);
 }
 .main .cols_right .slider_picture {
-  width: 70%;
+  width: 80%;
   border-top-left-radius: 12px 12px;
   border-top-right-radius: 12px 12px;
 }
 .main .cols_right .slider_info {
-  width: 70%;
+  width: 80%;
   background-color: white;
   padding: 10px 20px 20px 40px;
   border-bottom-left-radius: 12px 12px;
@@ -448,7 +448,7 @@ body {
       align-content: auto;
 }
 .main .cols_right .slider_btns {
-  width: 70%;
+  width: 80%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -537,6 +537,7 @@ body {
   right: 48px;
 }
 .main .cols_right .text_platform {
+  width: 80%;
   font-family: "Open Sans", sans-serif;
   color: #ffffff;
   font-weight: 400;
@@ -747,6 +748,9 @@ body {
   .main {
     background-size: cover;
   }
+  .main .slider_points {
+    left: 1%;
+  }
 
   .main .slider__section {
     display: -webkit-box;
@@ -763,15 +767,15 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
-  .main .slider__section .second .h3_question {
-    padding-top: 49px;
-  }
   .main .slider__section .cols_left {
     width: 100%;
   }
   .main .slider__section .cols_left h2 {
     font-size: 30px;
     margin: 10px 0px;
+  }
+  .main .slider__section .cols_left .h3_question {
+    margin-bottom: 10px;
   }
   .main .slider__section .cols_left .cols_btns {
     width: 74%;
@@ -788,6 +792,16 @@ body {
   }
   .main .slider__section .cols_right .text_platform {
     font-size: 14px;
+  }
+  .main .slider__section .cols_right .slider_picture {
+    width: 100%;
+  }
+  .main .slider__section .cols_right .slider_info {
+    width: 100%;
+    padding: 10px 20px 20px 10px;
+  }
+  .main .slider__section .cols_right .slider_btns, .main .slider__section .cols_right .slider_2_btns {
+    width: 100%;
   }
   .main .slider__section .grid {
     height: 465px;
@@ -904,9 +918,6 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  .main .slider__section .cols_right .slider_info {
-    padding: 10px 20px 20px 10px;
   }
   .main .slider__section .cols_right .slider_line {
     width: 20px;

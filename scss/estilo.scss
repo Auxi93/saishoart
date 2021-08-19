@@ -47,7 +47,6 @@
   .slider__grande__vertical {
     width: 100%;
     min-height: 300vh;
-    // background-color: rgb(59, 59, 59);
     transition: all 0.3s ease;
   }
   .slider_points {
@@ -62,7 +61,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: lightslategray;
+    background-color: rgb(188, 196, 204);
     cursor: pointer;
     opacity: 0.8;
   }
@@ -195,12 +194,12 @@
           width: calc(100% / 4);
         }
         &_picture {
-          width: 70%;
+          width: 80%;
           border-top-left-radius: 12px 12px;
           border-top-right-radius: 12px 12px;
         }
         &_info {
-          width: 70%;
+          width: 80%;
           background-color: white;
           padding: 10px 20px 20px 40px;
           border-bottom-left-radius: 12px 12px;
@@ -211,7 +210,7 @@
           @include flexible(row, nowrap, space-between, center, auto);
         }
         &_btns {
-          width: 70%;
+          width: 80%;
           position: relative;
           @include flexible(row, nowrap, space-between, center, auto);
           margin-top: 10px;
@@ -257,6 +256,7 @@
         }
       }
       .text_platform {
+        width: 80%;
         font-family: "Open Sans", sans-serif;
         color: #ffffff;
         font-weight: 400;
@@ -376,20 +376,24 @@
   }
   .main {
     background-size: cover;
+    .slider_points {
+      left: 1%;
+    }
   }
   .main .slider__section {
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    .second .h3_question {
-      padding-top: 49px;
-    }
+    
     .cols_left {
       width: 100%;
       h2 {
         font-size: 30px;
         margin: 10px 0px;
+      }
+      .h3_question {
+        margin-bottom: 10px;
       }
       .cols_btns {
         width: 74%;
@@ -406,6 +410,16 @@
       }
       .text_platform {
         font-size: 14px;
+      }
+      .slider_picture {
+        width: 100%;
+      }
+      .slider_info {
+        width: 100%;
+        padding: 10px 20px 20px 10px;
+      }
+      .slider_btns, .slider_2_btns {
+        width: 100%;
       }
     }
     .grid {
@@ -478,9 +492,7 @@
         justify-content: center;
         align-items: center;
       }
-      .cols_right .slider_info {
-        padding: 10px 20px 20px 10px;
-      }
+     
       .cols_right .slider_line {
         width: 20px;
       }
