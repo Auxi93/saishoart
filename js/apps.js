@@ -1,7 +1,7 @@
 //Menú de navegación del header 
-const Fabars = document.querySelector('.fa-bars')
-const Nav = document.querySelector('nav')
-const Arrow = document.querySelector('.arrow')
+const FaBars = document.querySelector('.fa-bars');
+const Nav = document.querySelector('nav');
+
 
 // // Carrusel de comentarios (solo 1)
 const lines = document.querySelectorAll('.slider_line')
@@ -23,11 +23,11 @@ const grande = document.querySelector('.slider__grande__vertical')
 const punto = document.querySelectorAll('.slider__point')
 
 
-//Menú de navegación cambiar de jq a js
-Fabars.click(function(){
-    Nav.toggleClass('ver')
-    Fabars.toggleClass('fa-times')
-})
+//Menú de navegación del header
+FaBars.addEventListener('click', function () {
+    Nav.classList.toggle('ver');
+    FaBars.classList.toggle('fa-times');
+  })
 
 
 // Carrusel de comentarios (solo 1)
