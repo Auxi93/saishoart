@@ -37,7 +37,6 @@
 .main {
   width: 100%;
   min-height: 100vh;
-  background-color: plum;
   padding-bottom: 4em;
   overflow: hidden;
   position: fixed;
@@ -45,8 +44,6 @@
   background-position: unset;
   background-repeat: no-repeat;
   background-size: contain;
-   
-
   .slider__grande__vertical {
     width: 100%;
     min-height: 300vh;
@@ -65,7 +62,7 @@
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: white;
+    background-color: lightslategray;
     cursor: pointer;
     opacity: 0.8;
   }
@@ -87,7 +84,7 @@
         font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
         font-weight: 900;
         font-size: 32px;
-        color: pink;
+        color: rgb(187, 192, 197);
       }
       h2 {
         font-family: "Montserrat", "Arial", "Helvetica", sans-serif;
@@ -152,6 +149,8 @@
           background-color: white;
           border-radius: 6px;
           padding: 20px 20px 40px 20px;
+          border-radius: 5px;
+          box-shadow: 2px 2px 10px rgb(0 0 0 / 30%);
         }
         .icon {
           margin: auto;
@@ -254,7 +253,7 @@
       }
       .text_platform {
         font-family: "Open Sans", sans-serif;
-        color: white;
+        color: #ffffff;
         font-weight: 400;
         font-size: 16px;
       }
@@ -369,22 +368,40 @@
       margin: 10px;
     }
   }
-  main {
-    .slider__section  {
+  .main .slider__section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    .cols_left {
       width: 100%;
-      height: 100vh;
-      @include flexible(column, wrap, center, center, auto);
-      .cols_left {
-        width: 100%;
+    }
+    h2 {
+      font-size: 30px;
+      margin: 10px 0px;
+    }
+    .cols_right {
+      width: 100%;
+      .slider {
+        width: 65%;
+        overflow: hidden;
+        margin: auto;
+        padding-top: 6px;
       }
-      .cols_right {
-        width: 100%;
-        .grid_span {
-          font-size: 20px;
-        }
-      }
-
-    }  
+    }
+    .grid {
+      grid-template-rows: repeat(4, 1fr);
+      gap: 15px;
+    }
+    .grid_one {
+      grid-row: 1/3;
+    }
+    .grid_two {
+      grid-row: 1/3;
+    }
+    .grid_three {
+      grid-row: 3/5;
+    }
   }
 }
 
