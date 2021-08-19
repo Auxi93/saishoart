@@ -114,7 +114,7 @@
         display: inline-flex;
         padding: 15px 30px;
         background: white;
-        border: 1px solid #6a28c0;
+        border: 2px solid white;
         border-radius: 10px;
         transition: all 0.5s ease;
         color: #6a28c0;
@@ -126,7 +126,6 @@
       a.btn:hover {
         background: #6a28c0;
         color: white;
-        border-radius: 10px solid #6a28c0;
       }
     }
     &_right {
@@ -191,17 +190,17 @@
           @include flexible(row, nowrap, flex-start, center, auto);
           transition: all 0.5s ease;
           border-radius: 5px;
-          box-shadow: 2px 2px 10px rgb(0 0 0 / 30%);
         }
         &_img {
           width: calc(100% / 4);
         }
         &_picture {
-          width: 100%;
+          width: 70%;
           border-top-left-radius: 12px 12px;
           border-top-right-radius: 12px 12px;
         }
         &_info {
+          width: 70%;
           background-color: white;
           padding: 10px 20px 20px 40px;
           border-bottom-left-radius: 12px 12px;
@@ -212,6 +211,7 @@
           @include flexible(row, nowrap, space-between, center, auto);
         }
         &_btns {
+          width: 70%;
           position: relative;
           @include flexible(row, nowrap, space-between, center, auto);
           margin-top: 10px;
@@ -224,7 +224,7 @@
         &_line {
           width: 70px;
           height: 3px;
-          background-color: rgba(0, 0, 0, 0.3);
+          background-color: #ffffff;
           margin: 0 0.4em;
           cursor: pointer;
         }
@@ -262,7 +262,6 @@
         font-weight: 400;
         font-size: 16px;
       }
-
       .slider_2 {
         width: 100%;
         max-width: 1200px;
@@ -304,7 +303,7 @@
         .slider_line2 {
           width: 70px;
           height: 3px;
-          background-color: rgba(0, 0, 0, 0.3);
+          background-color: #ffffff;
           margin: 0 0.4em;
           cursor: pointer;
         }
@@ -386,7 +385,6 @@
     .second .h3_question {
       padding-top: 49px;
     }
-
     .cols_left {
       width: 100%;
       h2 {
@@ -408,7 +406,7 @@
       }
       .text_platform {
         font-size: 14px;
-      } 
+      }
     }
     .grid {
       height: 465px;
@@ -432,25 +430,25 @@
   }
   .main {
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
     background-position: bottom;
     .slider_points {
       display: none;
-    }    
+    }
     .slider__section {
       min-height: 1510px;
-      @include flexible (column, nowrap, flex-start, center, auto);
+      @include flexible(column, nowrap, flex-start, center, auto);
       .cols_left {
         width: 100%;
         .cols_btns {
           width: 100%;
-          @include flexible (row, wrap, center, center, auto);
+          @include flexible(row, wrap, center, center, auto);
         }
         h3 {
           font-size: 17px;
         }
         p {
-          font-size: 12px; 
+          font-size: 12px;
         }
         a.btn {
           padding: 10px 20px;
@@ -473,22 +471,22 @@
       }
       .cols_right .text_platform {
         font-size: 14px;
-      }    
+      }
       .cols_right .grid {
-       display: flex;
-       flex-flow: row wrap;
-       justify-content: center;
-       align-items: center;
-      }  
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+      }
       .cols_right .slider_info {
         padding: 10px 20px 20px 10px;
       }
       .cols_right .slider_line {
         width: 20px;
-      }   
+      }
       .cols_right .slider_line2 {
         width: 20px;
-      }   
+      }
     }
     .slider__section.second {
       min-height: 1100px;
@@ -497,6 +495,4 @@
       min-height: 700px;
     }
   }
-
 }
-
