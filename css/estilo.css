@@ -53,6 +53,9 @@ body {
 }
 
 .header {
+  width: 100%;
+  position: fixed;
+  z-index: 4;
   background-color: #3b2f7f;
 }
 .header_centrado {
@@ -117,46 +120,52 @@ body {
   min-height: 100vh;
   background-color: plum;
   padding-bottom: 4em;
+  overflow: hidden;
+  position: fixed;
 }
-.main .slider__button {
-  position: absolute;
-  right: calc( 50% - 25px );
-  width: 40px;
-  height: 40px;
-  background-color: #3b3b3b;
-  color: white;
-  z-index: 4;
-  font-size: 1.3em;
+.main .slider__grande__vertical {
+  width: 100%;
+  min-height: 300vh;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.main .slider_points {
+  width: 50px;
+  height: 200px;
+  position: fixed;
+  top: 50%;
+  left: 4%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-line-pack: auto;
       align-content: auto;
+}
+.main .slider__point {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
   cursor: pointer;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  opacity: 0.8;
 }
-.main .slider__button:hover {
-  background-color: grey;
-}
-.main .slider__up {
-  top: 0;
-}
-.main .slider__down {
-  bottom: 0;
+.main .slider__point.activo {
+  width: 10px;
+  height: 10px;
+  opacity: 2;
 }
 .main .slider__section {
   width: 100%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,6 +180,8 @@ body {
           align-items: center;
   -ms-flex-line-pack: auto;
       align-content: auto;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .main .cols_left {
   width: 50%;
