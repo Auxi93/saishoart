@@ -803,6 +803,17 @@ body {
   }
 }
 @media screen and (max-width: 480px) {
+  .main {
+    position: relative;
+    overflow: hidden;
+  }
+  .main .slider_points {
+    width: 33px;
+    top: 50%;
+  }
+  .main .slider__section {
+    min-height: 800px;
+  }
   .main .slider__section .cols_left {
     width: 100%;
   }
@@ -823,6 +834,13 @@ body {
             align-items: center;
     -ms-flex-line-pack: auto;
         align-content: auto;
+  }
+  .main .slider__section .cols_left h3 {
+    font-size: 17px;
+  }
+  .main .slider__section .cols_left p {
+    font-size: 12px;
+    color: black;
   }
   .main .slider__section .cols_left a.btn {
     padding: 10px 20px;
